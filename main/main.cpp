@@ -46,7 +46,9 @@ extern "C" void app_main(void) {
 
     xTaskCreate(ws2812_task, "gpio_task", 12288, NULL, 5, NULL);
     
-    while(1);
+    while(1) {
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+    };
 
 }
 
